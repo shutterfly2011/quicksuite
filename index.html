@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.11.3/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@2.11.3/dist/quicksight-embedding-js-sdk.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickSight Dashboard Embedding Demo</title>
@@ -12,14 +11,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -28,115 +25,89 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
-        
         .header {
             background: linear-gradient(135deg, #232F3E 0%, #FF9900 100%);
             color: white;
             padding: 30px;
             text-align: center;
         }
-        
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
-        
         .header p {
             font-size: 1.1em;
             opacity: 0.9;
         }
-        
         .dashboard-info {
             padding: 30px;
             background: #f8f9fa;
             border-bottom: 2px solid #e9ecef;
         }
-        
         .dashboard-info h2 {
             color: #232F3E;
             margin-bottom: 15px;
         }
-        
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
-        
         .info-card {
             background: white;
             padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #FF9900;
         }
-        
         .info-card h3 {
             color: #232F3E;
             font-size: 0.9em;
             text-transform: uppercase;
             margin-bottom: 8px;
         }
-        
         .info-card p {
             color: #495057;
             font-size: 1.1em;
         }
-        
-        .dashboard-container {
+        .dashboard-section {
             padding: 30px;
-            min-height: 600px;
         }
-        
-        .dashboard-placeholder {
-            width: 100%;
-            height: 600px;
-            background: #f8f9fa;
-            border: 2px dashed #dee2e6;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-        }
-        
-        .dashboard-placeholder svg {
-            width: 100px;
-            height: 100px;
+        .dashboard-section h2 {
+            color: #232F3E;
             margin-bottom: 20px;
-            opacity: 0.5;
         }
-        
-        .dashboard-placeholder h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        
-        .dashboard-placeholder p {
-            font-size: 1em;
-            text-align: center;
-            max-width: 500px;
-        }
-        
-        .embed-code {
-            background: #232F3E;
-            color: #00ff00;
-            padding: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
+        .dashboard-section iframe {
+            border: none;
             border-radius: 8px;
-            margin-top: 20px;
-            overflow-x: auto;
         }
-        
+        #sdk-dashboard-container {
+            width: 100%;
+            height: 720px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .section-divider {
+            border: none;
+            border-top: 2px solid #e9ecef;
+            margin: 0;
+        }
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .theme-toggle label {
+            font-size: 14px;
+            color: #495057;
+        }
         .footer {
             background: #232F3E;
             color: white;
             padding: 20px;
             text-align: center;
         }
-        
         .footer p {
             opacity: 0.8;
         }
@@ -148,13 +119,13 @@
             <h1>QuickSight Dashboard Embedding Demo</h1>
             <p>Seamless Analytics Integration for Your Applications</p>
         </div>
-        
+
         <div class="dashboard-info">
             <h2>Dashboard Information</h2>
             <div class="info-grid">
                 <div class="info-card">
                     <h3>Dashboard Name</h3>
-                    <p>Merieux food safety testing demo </p>
+                    <p>Merieux food safety testing demo</p>
                 </div>
                 <div class="info-card">
                     <h3>Embed Type</h3>
@@ -170,35 +141,84 @@
                 </div>
             </div>
         </div>
-		<div>
-			<iframe
-				 width="960"
-				height="720"
-				src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/602296717525/dashboards/5a4097b2-c5c0-4ac1-a4e4-bc8739a977ef?directory_alias=QuickSight-for-AnyCompany-QBusiness">
-			</iframe>
-		</div>
-        
-        <div class="dashboard-container">
-            <div class="dashboard-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="3" y1="9" x2="21" y2="9"></line>
-						<iframe
-							width="960"
-							height="720"
-							src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/602296717525/dashboards/5a4097b2-c5c0-4ac1-a4e4-bc8739a977ef?directory_alias=QuickSight-for-AnyCompany-QBusiness">
-						</iframe>
 
-                    <line x1="9" y1="21" x2="9" y2="9"></line>
-                </svg>
-                <h3>QuickSight Dashboard Embed Area</h3>
-                <p>This is where your embedded QuickSight dashboard will appear. Replace this placeholder with the actual QuickSight embedding code using the SDK.</p>
-
-            </div>
-            
+        <!-- Dashboard 1: Static iframe embed -->
+        <div class="dashboard-section">
+            <h2>Dashboard 1 — Public Share (iframe)</h2>
+            <iframe
+                width="100%"
+                height="720"
+                src="https://us-east-1.quicksight.aws.amazon.com/sn/embed/share/accounts/602296717525/dashboards/5a4097b2-c5c0-4ac1-a4e4-bc8739a977ef?directory_alias=QuickSight-for-AnyCompany-QBusiness">
+            </iframe>
         </div>
 
+        <hr class="section-divider">
+
+        <!-- Dashboard 2: SDK embed with custom theme -->
+        <div class="dashboard-section">
+            <h2>Dashboard 2 — SDK Embed with Custom Theme</h2>
+            <div class="theme-toggle">
+                <label for="theme-toggle">Dark Mode</label>
+                <input type="checkbox" id="theme-toggle">
+            </div>
+            <div id="sdk-dashboard-container"></div>
+        </div>
+
+        <div class="footer">
+            <p>Powered by Amazon QuickSight Embedding SDK v2.11.3</p>
+        </div>
     </div>
+
+    <script>
+        let dashboard;
+
+        const THEME_ARN = 'arn:aws:quicksight:us-east-1:602296717525:theme/my-midnigh-custom-theme';
+        // To enable dark/light toggle, create a second theme and set it here:
+        // const DARK_THEME_ARN = 'arn:aws:quicksight:us-east-1:602296717525:theme/my-dark-theme';
+
+        const embedDashboard = async () => {
+            const { createEmbeddingContext } = QuickSightEmbedding;
+            const embeddingContext = await createEmbeddingContext();
+
+            const frameOptions = {
+                // PASTE YOUR EMBED URL FROM THE NOTEBOOK HERE
+                url: 'https://us-east-1.quicksight.aws.amazon.com/embed/c905907069af452996c97237158732a0/dashboards/fda6397f-c995-4cd8-b805-93ad41311718',
+                container: '#sdk-dashboard-container',
+                height: '720px',
+                width: '100%',
+                resizeHeightOnSizeChangedEvent: true,
+                onChange: (changeEvent) => {
+                    if (changeEvent.eventLevel === 'ERROR') {
+                        console.error('Embedding error:', changeEvent.eventName);
+                    }
+                },
+            };
+
+            const contentOptions = {
+                themeOptions: {
+                    themeArn: THEME_ARN,
+                },
+                toolbarOptions: {
+                    export: true,
+                    undoRedo: false,
+                    reset: true,
+                },
+                onMessage: (messageEvent) => {
+                    switch (messageEvent.eventName) {
+                        case 'CONTENT_LOADED':
+                            console.log('Dashboard loaded with custom theme');
+                            break;
+                        case 'ERROR_OCCURRED':
+                            console.error('Dashboard error:', messageEvent.message.errorCode);
+                            break;
+                    }
+                },
+            };
+
+            dashboard = await embeddingContext.embedDashboard(frameOptions, contentOptions);
+        };
+
+        embedDashboard();
+    </script>
 </body>
 </html>
-
